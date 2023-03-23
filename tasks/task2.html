@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ukr">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="../css/style.css">
+   <title>Завдання 2</title>
+</head>
+
+<body>
+   <main class="page">
+      <section class="block">
+         <div class="block__container">
+            <h1 class="block__title">Додаткове завдання 2</h1>
+            <div class="block__body">
+               <a href="../index.html" class="block__link">Повернутися до index.html</a>
+            </div>
+         </div>
+      </section>
+   </main>
+   <script>
+
+      function getXn(n) {
+         let x0 = x1 = 1, xn
+
+         for (let i = 2; i <= n; i++) {
+            xn = x1 + 2 * x0
+
+            x0 = x1
+            x1 = xn
+         }
+
+         return xn
+      }
+
+      function getXnRecursionVersion(n) {
+         if (n === 0 || n === 1) return 1
+         else return getXnRecursionVersion(n - 1) + 2 * getXnRecursionVersion(n - 2)
+      }
+
+      const resultXn = getXn(5)
+      const recursionResultXn = getXnRecursionVersion(5)
+
+      document.write(`
+         <div class="text">Нерекурсивний алгоритм. Результат: x5 = ${resultXn}</div>
+         <div class="text">Рекурсивний алгоритм. Результат: x5 = ${recursionResultXn}</div>
+      `)
+   </script>
+</body>
+
+</html>

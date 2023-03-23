@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ukr">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="../css/style.css">
+   <title>Завдання 1</title>
+</head>
+
+<body>
+   <main class="page">
+      <section class="block">
+         <div class="block__container">
+            <h1 class="block__title">Обов'язкове завдання 1</h1>
+            <div class="block__body">
+               <a href="../index.html" class="block__link">Повернутися до index.html</a>
+            </div>
+         </div>
+      </section>
+   </main>
+   <script>
+      function findX(maxIndex) {
+         const x0 = 1
+         let result, temp = x0
+
+         for (let i = 1; i <= maxIndex; i++) {
+            result = temp + 2 * i
+            temp = result
+         }
+
+         return result
+      }
+
+      function findXRecursionVersion(n) {
+         return n === 0 ? 1 : findXRecursionVersion(n - 1) + 2 * n
+      }
+
+      const MAX_INDEX = 10
+
+      const x10 = findX(MAX_INDEX)
+      const recursionX10 = findXRecursionVersion(MAX_INDEX)
+
+      document.write(`
+         <div class="text">Нерекурсивний алгоритм. Результат: х10 = ${x10}</div>
+         <div class="text">Рекурсивний алгоритм. Результат: х10 = ${recursionX10}</div>
+      `)
+   </script>
+</body>
+
+</html>
